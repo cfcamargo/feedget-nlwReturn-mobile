@@ -3,20 +3,17 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-  },
-
-  options: {
-    width: '100%',
-    marginBottom: 48,
-    flexDirection: 'row',
+    flex: 1,
+    height: 40,
+    backgroundColor: theme.colors.brand,
+    alignContent: 'center',
     justifyContent: 'center',
+    borderRadius: 4,
   },
-
   title: {
-    fontSize: 20,
-    marginBottom: 32,
+    fontSize: 14,
     fontFamily: theme.fonts.medium,
-    color: theme.colors.text_primary
+    color: theme.colors.text_on_brand_color,
+    textAlign: 'center',
   }
 });
