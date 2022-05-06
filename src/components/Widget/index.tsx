@@ -31,6 +31,14 @@ function Widget() {
     bottomSheetRef.current?.expand()
   }
 
+  function handleResetFeedback(){
+    setFeedbackType(null)
+    setFeedbackSent(false)
+  }
+
+  function handleFeedbackSent(){
+    setFeedbackSent(true)
+  }
 
   return (
     <>
@@ -53,9 +61,9 @@ function Widget() {
         /> */}
 
         {
-          feedbackSent ? <Success /> : <>
+          feedbackSent ? <Success onSendAnotherFeedback={handleResetFeedback}/> : <>
             {
-              feedbackType ? <Form feedbackType={feedbackType}/> : <Options />
+              feedbackType ? <Form feedbackType={feedbackType} onFeedbackReset={handleResetFeedback} onFeedbackSend={handleFeedbackSent}/> : <Options onFeedbackTypeChanged={setFeedbackType}/>
             }
           </>
 
